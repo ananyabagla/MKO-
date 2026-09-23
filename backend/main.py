@@ -17,7 +17,8 @@ app = FastAPI(title="MKO Environmental AI Workstation")
 app.add_middleware(
     CORSMiddleware,
     # Allow local development
-    allow_origins=["http://localhost", "http://127.0.0.1", "http://localhost:80", "http://127.0.0.1:80"],
+    #allow_origins=["http://localhost", "http://127.0.0.1", "http://localhost:80", "http://127.0.0.1:80"],
+    allow_origins=["*"]
     # Allow ANY URL that starts with https://mko- and ends with .vercel.app
     allow_origin_regex=r"https://mko-.*\.vercel\.app",
     allow_credentials=True,
