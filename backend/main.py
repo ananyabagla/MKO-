@@ -20,7 +20,7 @@ app.add_middleware(
                    "http://127.0.0.1",
                    "http://localhost:80",
                     "http://127.0.0.1:80",
-                    "*"], 
+                    "https://mko-kvz6.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
