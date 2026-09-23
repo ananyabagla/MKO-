@@ -16,14 +16,13 @@ app = FastAPI(title="MKO Environmental AI Workstation")
 # Configure CORS for local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost",
-                   "http://127.0.0.1",
-                   "http://localhost:80",
-                    "http://127.0.0.1:80",
-                    "https://mko-kvz6.vercel.app"], 
+    # Allow local development
+    allow_origins=["http://localhost", "http://127.0.0.1", "http://localhost:80", "http://127.0.0.1:80"],
+    # Allow ANY URL that starts with https://mko- and ends with .vercel.app
+    allow_origin_regex=r"https://mko-.*\.vercel\.app",
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
 
 # Initialize the LLM using Groq (Free Tier)
